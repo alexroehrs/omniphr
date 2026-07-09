@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite the article that proposed the
+  OmniPHR model (see preferred-citation).
+title: "OmniPHR - Java reference implementation"
+type: software
+authors:
+  - family-names: Roehrs
+    given-names: Alex
+license: MIT
+preferred-citation:
+  type: article
+  title: "OmniPHR: A distributed architecture model to integrate personal health records"
+  authors:
+    - family-names: Roehrs
+      given-names: Alex
+    - family-names: da Costa
+      given-names: Cristiano André
+    - family-names: da Rosa Righi
+      given-names: Rodrigo
+  journal: "Journal of Biomedical Informatics"
+  volume: 71
+  start: 70
+  end: 81
+  year: 2017
+  doi: 10.1016/j.jbi.2017.05.012
