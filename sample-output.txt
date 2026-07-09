@@ -14,7 +14,7 @@ Network up: 12 nodes, 4 subnetworks, 4 routing overlays.
 ==============================================================================
 Patient id (single hash code): omniphr://id/f7f2146e17df777de1eeedc504026d1704292ea7bc824dc61b64304b756b7ac3
 Duplicate registration avoided: same id -> true
-Patient authenticated by challenge-response, session 9e9b53f5...
+Patient authenticated by challenge-response, session c09cfadb...
 
 ==============================================================================
   Administrator functions of the routing overlay
@@ -25,8 +25,8 @@ Organizational profiles defined and assigned.
 ==============================================================================
   Datablock 0 - demographics informed by the patient
 ==============================================================================
-      [pub-sub -> hospital-a-ehr] [DATABLOCK_PUBLISHED] from=omniphr://id/f7f2146e17df777de1eeedc504026d1704292ea7bc824dc61b64304b756b7ac3 subject=e7918504-841d-4c1c-bfce-2bebccc3e01b (DEMOGRAPHICS seq=0)
-  Datablock{seq=0, category=DEMOGRAPHICS, archetype=openEHR-EHR-EVALUATION.demographics.v1, author=omniphr://id/f7f2146e17df777de1eeedc504026d1704292ea7bc824dc61b64304b756b7ac3 (PATIENT), hash=6172e21e17e8...}
+      [pub-sub -> hospital-a-ehr] [DATABLOCK_PUBLISHED] from=omniphr://id/f7f2146e17df777de1eeedc504026d1704292ea7bc824dc61b64304b756b7ac3 subject=2de6eb46-2f7e-4c53-b674-1ed5fbe862c5 (DEMOGRAPHICS seq=0)
+  Datablock{seq=0, category=DEMOGRAPHICS, archetype=openEHR-EHR-EVALUATION.demographics.v1, author=omniphr://id/f7f2146e17df777de1eeedc504026d1704292ea7bc824dc61b64304b756b7ac3 (PATIENT), hash=0951342947a6...}
 
 ==============================================================================
   Access permissions - the patient is the master controller
@@ -40,57 +40,57 @@ Grants: physician (4 categories), nurse (2), lab technician (1), clinic physicia
 ==============================================================================
   Hospital (openEHR native) - Translator NOT triggered
 ==============================================================================
-      [pub-sub -> hospital-a-ehr] [DATABLOCK_UPDATED] from=omniphr://id/eec03fb6b6ef2fd58806b782b6853b2eee73079c5f38e055c214faf4d72e5ed5 subject=18a920cc-78d5-41a2-8160-a438bd4d837f (DIAGNOSIS seq=1)
-  Datablock{seq=1, category=DIAGNOSIS, archetype=openEHR-EHR-EVALUATION.problem_diagnosis.v1, author=omniphr://id/eec03fb6b6ef2fd58806b782b6853b2eee73079c5f38e055c214faf4d72e5ed5 (HEALTH_PROFESSIONAL), hash=c41a32ed102a...}
-      [pub-sub -> hospital-a-ehr] [DATABLOCK_UPDATED] from=omniphr://id/eec03fb6b6ef2fd58806b782b6853b2eee73079c5f38e055c214faf4d72e5ed5 subject=deed0bbe-629c-400b-849a-81b67a36ad69 (MEDICATION seq=2)
-  Datablock{seq=2, category=MEDICATION, archetype=openEHR-EHR-INSTRUCTION.medication_order.v1, author=omniphr://id/eec03fb6b6ef2fd58806b782b6853b2eee73079c5f38e055c214faf4d72e5ed5 (HEALTH_PROFESSIONAL), hash=c6a0e55a99bf...}
+      [pub-sub -> hospital-a-ehr] [DATABLOCK_UPDATED] from=omniphr://id/eec03fb6b6ef2fd58806b782b6853b2eee73079c5f38e055c214faf4d72e5ed5 subject=910dac99-4516-4599-b63b-45b528920c0f (DIAGNOSIS seq=1)
+  Datablock{seq=1, category=DIAGNOSIS, archetype=openEHR-EHR-EVALUATION.problem_diagnosis.v1, author=omniphr://id/eec03fb6b6ef2fd58806b782b6853b2eee73079c5f38e055c214faf4d72e5ed5 (HEALTH_PROFESSIONAL), hash=1badfae43585...}
+      [pub-sub -> hospital-a-ehr] [DATABLOCK_UPDATED] from=omniphr://id/eec03fb6b6ef2fd58806b782b6853b2eee73079c5f38e055c214faf4d72e5ed5 subject=c8ba172a-0b6d-4ec6-a2b7-7fb16fd23980 (MEDICATION seq=2)
+  Datablock{seq=2, category=MEDICATION, archetype=openEHR-EHR-INSTRUCTION.medication_order.v1, author=omniphr://id/eec03fb6b6ef2fd58806b782b6853b2eee73079c5f38e055c214faf4d72e5ed5 (HEALTH_PROFESSIONAL), hash=bca23cc9daf4...}
 Originals kept at the health organization: hospital-a-ehr holds 2 originals.
 
 ==============================================================================
   Laboratory (HL7) - Translator triggered, ontology + LOINC
 ==============================================================================
-      [pub-sub -> hospital-a-ehr] [DATABLOCK_UPDATED] from=omniphr://id/513147e193a22297e2174d51ed42cc99fccb23bccc44ede77b3ee19b36c7c283 subject=5ef41281-bd51-484a-9bae-cf8471d92dad (LAB_RESULT seq=3)
-  Datablock{seq=3, category=LAB_RESULT, archetype=openEHR-EHR-OBSERVATION.laboratory_test_result.v1, author=omniphr://id/513147e193a22297e2174d51ed42cc99fccb23bccc44ede77b3ee19b36c7c283 (HEALTH_PROFESSIONAL), hash=0c6901b82ca5...}
+      [pub-sub -> hospital-a-ehr] [DATABLOCK_UPDATED] from=omniphr://id/513147e193a22297e2174d51ed42cc99fccb23bccc44ede77b3ee19b36c7c283 subject=c4639d0a-89c0-480e-ac00-76d3f0784b14 (LAB_RESULT seq=3)
+  Datablock{seq=3, category=LAB_RESULT, archetype=openEHR-EHR-OBSERVATION.laboratory_test_result.v1, author=omniphr://id/513147e193a22297e2174d51ed42cc99fccb23bccc44ede77b3ee19b36c7c283 (HEALTH_PROFESSIONAL), hash=4bc2bbd46b17...}
   translated content readable by the patient:
     openEHR-EHR-OBSERVATION.laboratory_test_result.v1 {glucose=92 mg/dL, hemoglobin=13.5 g/dL, subject=omniphr://id/f7f2146e17df777de1eeedc504026d1704292ea7bc824dc61b64304b756b7ac3}
 
 ==============================================================================
   Clinic (proprietary/legacy) - Translator with NLP + semantic DB
 ==============================================================================
-      [pub-sub -> hospital-a-ehr] [DATABLOCK_UPDATED] from=omniphr://id/1b17b84d22f97de8758b71e3274b850c53897d8b04e56da7fe4b6bf15b072876 subject=c8f44ce3-9e63-4b43-bbcc-e4e144c1395f (DIAGNOSIS seq=4)
-  Datablock{seq=4, category=DIAGNOSIS, archetype=openEHR-EHR-EVALUATION.problem_diagnosis.v1, author=omniphr://id/1b17b84d22f97de8758b71e3274b850c53897d8b04e56da7fe4b6bf15b072876 (HEALTH_PROFESSIONAL), hash=901d64c39569...}
+      [pub-sub -> hospital-a-ehr] [DATABLOCK_UPDATED] from=omniphr://id/1b17b84d22f97de8758b71e3274b850c53897d8b04e56da7fe4b6bf15b072876 subject=c143a8c0-c8d4-45d1-8dc1-d9daa06e6497 (DIAGNOSIS seq=4)
+  Datablock{seq=4, category=DIAGNOSIS, archetype=openEHR-EHR-EVALUATION.problem_diagnosis.v1, author=omniphr://id/1b17b84d22f97de8758b71e3274b850c53897d8b04e56da7fe4b6bf15b072876 (HEALTH_PROFESSIONAL), hash=fc70fd8cfe07...}
   extracted by NLP/ontology: {blood_pressure=120/80 mmHg, problem_diagnosis=mild allergic rhinitis}
 
 ==============================================================================
   Wearable sensor - datablocks signed by the device
 ==============================================================================
-      [pub-sub -> hospital-a-ehr] [DATABLOCK_UPDATED] from=omniphr://id/de62f92b07cf4d260bc601c5e5f73627c385a39cf5e6b6313c8802d934993855 subject=ed9c68ef-f0c0-47d3-a04e-c9dcf798e3e9 (VITAL_SIGNS seq=5)
-  Datablock{seq=5, category=VITAL_SIGNS, archetype=openEHR-EHR-OBSERVATION.pulse.v1, author=omniphr://id/de62f92b07cf4d260bc601c5e5f73627c385a39cf5e6b6313c8802d934993855 (SENSOR), hash=eed7cc9d68ee...}
-      [pub-sub -> hospital-a-ehr] [DATABLOCK_UPDATED] from=omniphr://id/de62f92b07cf4d260bc601c5e5f73627c385a39cf5e6b6313c8802d934993855 subject=0bca2fde-cdbc-4d1f-88de-7eb3b6f3685c (VITAL_SIGNS seq=6)
-  Datablock{seq=6, category=VITAL_SIGNS, archetype=openEHR-EHR-OBSERVATION.pulse.v1, author=omniphr://id/de62f92b07cf4d260bc601c5e5f73627c385a39cf5e6b6313c8802d934993855 (SENSOR), hash=18875d990b2d...}
-      [pub-sub -> hospital-a-ehr] [DATABLOCK_UPDATED] from=omniphr://id/f7f2146e17df777de1eeedc504026d1704292ea7bc824dc61b64304b756b7ac3 subject=ca77fa61-a2d0-4641-87dc-c75fa3766b13 (WELLNESS seq=7)
-  Datablock{seq=7, category=WELLNESS, archetype=openEHR-EHR-OBSERVATION.body_weight.v1, author=omniphr://id/f7f2146e17df777de1eeedc504026d1704292ea7bc824dc61b64304b756b7ac3 (PATIENT), hash=f72740851e45...} (patient-informed, stored on routing overlay)
+      [pub-sub -> hospital-a-ehr] [DATABLOCK_UPDATED] from=omniphr://id/de62f92b07cf4d260bc601c5e5f73627c385a39cf5e6b6313c8802d934993855 subject=2b24d1fc-d1a4-4b2d-a34f-5aca7fa2b142 (VITAL_SIGNS seq=5)
+  Datablock{seq=5, category=VITAL_SIGNS, archetype=openEHR-EHR-OBSERVATION.pulse.v1, author=omniphr://id/de62f92b07cf4d260bc601c5e5f73627c385a39cf5e6b6313c8802d934993855 (SENSOR), hash=2aceb8d43d9e...}
+      [pub-sub -> hospital-a-ehr] [DATABLOCK_UPDATED] from=omniphr://id/de62f92b07cf4d260bc601c5e5f73627c385a39cf5e6b6313c8802d934993855 subject=c32731a1-dad7-4a3b-b369-518caf7a2ca1 (VITAL_SIGNS seq=6)
+  Datablock{seq=6, category=VITAL_SIGNS, archetype=openEHR-EHR-OBSERVATION.pulse.v1, author=omniphr://id/de62f92b07cf4d260bc601c5e5f73627c385a39cf5e6b6313c8802d934993855 (SENSOR), hash=37b100684030...}
+      [pub-sub -> hospital-a-ehr] [DATABLOCK_UPDATED] from=omniphr://id/f7f2146e17df777de1eeedc504026d1704292ea7bc824dc61b64304b756b7ac3 subject=2a3f737e-342e-4390-8ca7-1f4aaaafbcd1 (WELLNESS seq=7)
+  Datablock{seq=7, category=WELLNESS, archetype=openEHR-EHR-OBSERVATION.body_weight.v1, author=omniphr://id/f7f2146e17df777de1eeedc504026d1704292ea7bc824dc61b64304b756b7ac3 (PATIENT), hash=aad639fb589a...} (patient-informed, stored on routing overlay)
 
 ==============================================================================
   Unified PHR viewpoint, paginated, most recent first
 ==============================================================================
 Patient - Page 1 (4 of 8 blocks, hasNext=true)
-  Datablock{seq=7, category=WELLNESS, archetype=openEHR-EHR-OBSERVATION.body_weight.v1, author=omniphr://id/f7f2146e17df777de1eeedc504026d1704292ea7bc824dc61b64304b756b7ac3 (PATIENT), hash=f72740851e45...}
-  Datablock{seq=6, category=VITAL_SIGNS, archetype=openEHR-EHR-OBSERVATION.pulse.v1, author=omniphr://id/de62f92b07cf4d260bc601c5e5f73627c385a39cf5e6b6313c8802d934993855 (SENSOR), hash=18875d990b2d...}
-  Datablock{seq=5, category=VITAL_SIGNS, archetype=openEHR-EHR-OBSERVATION.pulse.v1, author=omniphr://id/de62f92b07cf4d260bc601c5e5f73627c385a39cf5e6b6313c8802d934993855 (SENSOR), hash=eed7cc9d68ee...}
-  Datablock{seq=4, category=DIAGNOSIS, archetype=openEHR-EHR-EVALUATION.problem_diagnosis.v1, author=omniphr://id/1b17b84d22f97de8758b71e3274b850c53897d8b04e56da7fe4b6bf15b072876 (HEALTH_PROFESSIONAL), hash=901d64c39569...}
+  Datablock{seq=7, category=WELLNESS, archetype=openEHR-EHR-OBSERVATION.body_weight.v1, author=omniphr://id/f7f2146e17df777de1eeedc504026d1704292ea7bc824dc61b64304b756b7ac3 (PATIENT), hash=aad639fb589a...}
+  Datablock{seq=6, category=VITAL_SIGNS, archetype=openEHR-EHR-OBSERVATION.pulse.v1, author=omniphr://id/de62f92b07cf4d260bc601c5e5f73627c385a39cf5e6b6313c8802d934993855 (SENSOR), hash=37b100684030...}
+  Datablock{seq=5, category=VITAL_SIGNS, archetype=openEHR-EHR-OBSERVATION.pulse.v1, author=omniphr://id/de62f92b07cf4d260bc601c5e5f73627c385a39cf5e6b6313c8802d934993855 (SENSOR), hash=2aceb8d43d9e...}
+  Datablock{seq=4, category=DIAGNOSIS, archetype=openEHR-EHR-EVALUATION.problem_diagnosis.v1, author=omniphr://id/1b17b84d22f97de8758b71e3274b850c53897d8b04e56da7fe4b6bf15b072876 (HEALTH_PROFESSIONAL), hash=fc70fd8cfe07...}
 Patient - Page 2 (4 of 8 blocks, hasNext=false)
-  Datablock{seq=3, category=LAB_RESULT, archetype=openEHR-EHR-OBSERVATION.laboratory_test_result.v1, author=omniphr://id/513147e193a22297e2174d51ed42cc99fccb23bccc44ede77b3ee19b36c7c283 (HEALTH_PROFESSIONAL), hash=0c6901b82ca5...}
-  Datablock{seq=2, category=MEDICATION, archetype=openEHR-EHR-INSTRUCTION.medication_order.v1, author=omniphr://id/eec03fb6b6ef2fd58806b782b6853b2eee73079c5f38e055c214faf4d72e5ed5 (HEALTH_PROFESSIONAL), hash=c6a0e55a99bf...}
-  Datablock{seq=1, category=DIAGNOSIS, archetype=openEHR-EHR-EVALUATION.problem_diagnosis.v1, author=omniphr://id/eec03fb6b6ef2fd58806b782b6853b2eee73079c5f38e055c214faf4d72e5ed5 (HEALTH_PROFESSIONAL), hash=c41a32ed102a...}
-  Datablock{seq=0, category=DEMOGRAPHICS, archetype=openEHR-EHR-EVALUATION.demographics.v1, author=omniphr://id/f7f2146e17df777de1eeedc504026d1704292ea7bc824dc61b64304b756b7ac3 (PATIENT), hash=6172e21e17e8...}
+  Datablock{seq=3, category=LAB_RESULT, archetype=openEHR-EHR-OBSERVATION.laboratory_test_result.v1, author=omniphr://id/513147e193a22297e2174d51ed42cc99fccb23bccc44ede77b3ee19b36c7c283 (HEALTH_PROFESSIONAL), hash=4bc2bbd46b17...}
+  Datablock{seq=2, category=MEDICATION, archetype=openEHR-EHR-INSTRUCTION.medication_order.v1, author=omniphr://id/eec03fb6b6ef2fd58806b782b6853b2eee73079c5f38e055c214faf4d72e5ed5 (HEALTH_PROFESSIONAL), hash=bca23cc9daf4...}
+  Datablock{seq=1, category=DIAGNOSIS, archetype=openEHR-EHR-EVALUATION.problem_diagnosis.v1, author=omniphr://id/eec03fb6b6ef2fd58806b782b6853b2eee73079c5f38e055c214faf4d72e5ed5 (HEALTH_PROFESSIONAL), hash=1badfae43585...}
+  Datablock{seq=0, category=DEMOGRAPHICS, archetype=openEHR-EHR-EVALUATION.demographics.v1, author=omniphr://id/f7f2146e17df777de1eeedc504026d1704292ea7bc824dc61b64304b756b7ac3 (PATIENT), hash=0951342947a6...}
 Chain validated as intact during assembly.
 
 ==============================================================================
   Views filtered by roles and privileges
 ==============================================================================
 Physician (PHYSICIAN profile + personal grant): 6 blocks visible of 8
-Nurse (NURSE profile restricts to VITAL_SIGNS): 2 blocks visible -> [Datablock{seq=6, category=VITAL_SIGNS, archetype=openEHR-EHR-OBSERVATION.pulse.v1, author=omniphr://id/de62f92b07cf4d260bc601c5e5f73627c385a39cf5e6b6313c8802d934993855 (SENSOR), hash=18875d990b2d...}, Datablock{seq=5, category=VITAL_SIGNS, archetype=openEHR-EHR-OBSERVATION.pulse.v1, author=omniphr://id/de62f92b07cf4d260bc601c5e5f73627c385a39cf5e6b6313c8802d934993855 (SENSOR), hash=eed7cc9d68ee...}]
+Nurse (NURSE profile restricts to VITAL_SIGNS): 2 blocks visible -> [Datablock{seq=6, category=VITAL_SIGNS, archetype=openEHR-EHR-OBSERVATION.pulse.v1, author=omniphr://id/de62f92b07cf4d260bc601c5e5f73627c385a39cf5e6b6313c8802d934993855 (SENSOR), hash=37b100684030...}, Datablock{seq=5, category=VITAL_SIGNS, archetype=openEHR-EHR-OBSERVATION.pulse.v1, author=omniphr://id/de62f92b07cf4d260bc601c5e5f73627c385a39cf5e6b6313c8802d934993855 (SENSOR), hash=2aceb8d43d9e...}]
 Third party (no grant): 0 blocks visible (denied by default)
 
 The physician decrypts the lab result re-wrapped on grant:
@@ -134,9 +134,9 @@ Patient recovers access with recovery code: true
 ==============================================================================
   Network summary
 ==============================================================================
-10 alive nodes, 37 stored replicas, avg 3.7 replicas/node
+10 alive nodes, 35 stored replicas, avg 3.5 replicas/node
 cache hits=48 misses=25 size=1
-Messages routed: 8 | avg one-way hop count: 7.63 | avg one-way latency: 0.466 s
+Messages routed: 8 | avg one-way hop count: 8.75 | avg one-way latency: 0.528 s
 
 Audit trail (last entries):
   ACCESS_ALLOWED requester=omniphr://id/f7f2146e17df777de1eeedc504026d1704292ea7bc824dc61b64304b756b7ac3 patient=omniphr://id/f7f2146e17df777de1eeedc504026d1704292ea7bc824dc61b64304b756b7ac3 category=LAB_RESULT
@@ -176,7 +176,7 @@ OmniPHR self-test
 
 $ ./run.sh eval
 
-OmniPHR evaluation - 4 setups, 2 tests each, simulated period of 60 s per test
+OmniPHR evaluation - 4 setups, 2 tests each, observation period of 60 s per test
 
 Setup  N      | RO (A/B)  BR (A/B)  | MP (A/B)            | OHC (A/B)       | OL s (A/B)     
 ----------------------------------------------------------------------------------------------------

@@ -2,7 +2,7 @@ package br.unisinos.omniphr.middleware.datablock;
 
 import br.unisinos.omniphr.core.AuthorRole;
 import br.unisinos.omniphr.core.Datablock;
-import br.unisinos.omniphr.net.SimulatedNetwork;
+import br.unisinos.omniphr.net.NetworkEnvironment;
 import br.unisinos.omniphr.p2p.chord.ChordId;
 import br.unisinos.omniphr.p2p.chord.ChordNode;
 import br.unisinos.omniphr.p2p.chord.Hops;
@@ -22,11 +22,11 @@ import java.util.List;
  */
 public class Distributor {
 
-    private final SimulatedNetwork network;
+    private final NetworkEnvironment network;
     private final ChordNode overlayNode;         // the routing overlay this middleware runs on
     private final MessageRouter messageRouter;   // provides the time-limited cache
 
-    public Distributor(SimulatedNetwork network, ChordNode overlayNode, MessageRouter messageRouter) {
+    public Distributor(NetworkEnvironment network, ChordNode overlayNode, MessageRouter messageRouter) {
         this.network = network;
         this.overlayNode = overlayNode;
         this.messageRouter = messageRouter;

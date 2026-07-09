@@ -2,7 +2,7 @@ package br.unisinos.omniphr.node;
 
 import br.unisinos.omniphr.core.Datablock;
 import br.unisinos.omniphr.core.StandardFormat;
-import br.unisinos.omniphr.net.SimulatedNetwork;
+import br.unisinos.omniphr.net.NetworkEnvironment;
 import br.unisinos.omniphr.p2p.chord.ChordNode;
 
 import java.util.Map;
@@ -33,7 +33,7 @@ public class RegularNode extends ChordNode {
     /** Originals created at this organization/device. */
     private final Map<String, Datablock> originStore = new ConcurrentHashMap<>();
 
-    public RegularNode(String name, SimulatedNetwork network, int subnetId,
+    public RegularNode(String name, NetworkEnvironment network, int subnetId,
                        Kind kind, StandardFormat sourceStandard) {
         super(name, network, subnetId);
         this.kind = kind;

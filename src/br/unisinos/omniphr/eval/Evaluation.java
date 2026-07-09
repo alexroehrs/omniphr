@@ -2,7 +2,7 @@ package br.unisinos.omniphr.eval;
 
 import br.unisinos.omniphr.core.StandardFormat;
 import br.unisinos.omniphr.net.Metrics;
-import br.unisinos.omniphr.net.SimulatedNetwork;
+import br.unisinos.omniphr.net.NetworkEnvironment;
 import br.unisinos.omniphr.node.RegularNode;
 import br.unisinos.omniphr.overlay.RoutingOverlay;
 import br.unisinos.omniphr.p2p.chord.ChordId;
@@ -57,7 +57,7 @@ public class Evaluation {
     public void run() {
         System.out.println();
         System.out.println("OmniPHR evaluation - " + maxSetups + " setups, 2 tests each,"
-                + " simulated period of " + (int) durationSeconds + " s per test");
+                + " observation period of " + (int) durationSeconds + " s per test");
         System.out.println();
         System.out.printf("%-6s %-6s | %-9s %-9s | %-19s | %-15s | %-15s%n",
                 "Setup", "N", "RO (A/B)", "BR (A/B)", "MP (A/B)", "OHC (A/B)", "OL s (A/B)");
@@ -87,7 +87,7 @@ public class Evaluation {
      * Runs one test; returns {MP, OHC, OL(s)}.
      */
     private double[] runTest(int nodeCount, int routingOverlays, int backboneRouters, long testSeed) {
-        SimulatedNetwork network = new SimulatedNetwork(testSeed);
+        NetworkEnvironment network = new NetworkEnvironment(testSeed);
         network.setSubnetsPerBackboneDomain(Math.max(1, routingOverlays / Math.max(1, backboneRouters)));
         Random random = new Random(testSeed);
 

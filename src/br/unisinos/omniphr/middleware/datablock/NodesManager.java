@@ -1,7 +1,7 @@
 package br.unisinos.omniphr.middleware.datablock;
 
 import br.unisinos.omniphr.core.Datablock;
-import br.unisinos.omniphr.net.SimulatedNetwork;
+import br.unisinos.omniphr.net.NetworkEnvironment;
 import br.unisinos.omniphr.p2p.chord.ChordNode;
 import br.unisinos.omniphr.p2p.chord.Hops;
 import br.unisinos.omniphr.p2p.pubsub.PubSubMessage;
@@ -23,11 +23,11 @@ public class NodesManager {
 
     public static final String TOPIC_NODES = "omniphr/nodes";
 
-    private final SimulatedNetwork network;
+    private final NetworkEnvironment network;
     private final PubSubService pubSub;
     private final String overlayName;
 
-    public NodesManager(SimulatedNetwork network, PubSubService pubSub, String overlayName) {
+    public NodesManager(NetworkEnvironment network, PubSubService pubSub, String overlayName) {
         this.network = network;
         this.pubSub = pubSub;
         this.overlayName = overlayName;

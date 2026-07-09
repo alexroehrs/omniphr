@@ -12,7 +12,7 @@ import br.unisinos.omniphr.middleware.datablock.MessageRouter;
 import br.unisinos.omniphr.middleware.datablock.RawRecord;
 import br.unisinos.omniphr.middleware.datablock.Validator;
 import br.unisinos.omniphr.middleware.security.Encryptor;
-import br.unisinos.omniphr.net.SimulatedNetwork;
+import br.unisinos.omniphr.net.NetworkEnvironment;
 import br.unisinos.omniphr.node.Actor;
 import br.unisinos.omniphr.p2p.chord.ChordNode;
 import br.unisinos.omniphr.p2p.chord.Hops;
@@ -57,7 +57,7 @@ public class RoutingOverlay extends ChordNode {
     /** Chain head (last datablock) of each patient chain kept by this overlay. */
     private final Map<String, Datablock> chainHeads = new ConcurrentHashMap<>();
 
-    public RoutingOverlay(String name, SimulatedNetwork network, int subnetId) {
+    public RoutingOverlay(String name, NetworkEnvironment network, int subnetId) {
         super(name, network, subnetId);
         this.pubSub = new PubSubService(name);
         this.middleware = new Middleware(network, this, name, pubSub);

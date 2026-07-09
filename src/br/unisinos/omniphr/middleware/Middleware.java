@@ -9,7 +9,7 @@ import br.unisinos.omniphr.middleware.security.Authenticator;
 import br.unisinos.omniphr.middleware.security.DigitalSigner;
 import br.unisinos.omniphr.middleware.security.Encryptor;
 import br.unisinos.omniphr.middleware.security.RolesAndPrivileges;
-import br.unisinos.omniphr.net.SimulatedNetwork;
+import br.unisinos.omniphr.net.NetworkEnvironment;
 import br.unisinos.omniphr.p2p.chord.ChordNode;
 import br.unisinos.omniphr.p2p.pubsub.PubSubService;
 import br.unisinos.omniphr.repository.RelationalRepository;
@@ -45,7 +45,7 @@ public class Middleware {
     private final Authenticator authenticator;
     private final RolesAndPrivileges rolesAndPrivileges;
 
-    public Middleware(SimulatedNetwork network, ChordNode overlayNode,
+    public Middleware(NetworkEnvironment network, ChordNode overlayNode,
                       String overlayName, PubSubService pubSub) {
         this.messageRouter = new MessageRouter();
         this.translator = new Translator(semanticRepository);

@@ -1,7 +1,7 @@
 package br.unisinos.omniphr.p2p.chord;
 
 import br.unisinos.omniphr.core.Datablock;
-import br.unisinos.omniphr.net.SimulatedNetwork;
+import br.unisinos.omniphr.net.NetworkEnvironment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +26,7 @@ public class ChordNode {
 
     private final ChordId id;
     private final String name;
-    private final SimulatedNetwork network;
+    private final NetworkEnvironment network;
     private final int subnetId;
 
     private volatile ChordNode predecessor;
@@ -38,7 +38,7 @@ public class ChordNode {
     /** Local replica store of datablocks placed on this node by the DHT. */
     private final Map<String, Datablock> store = new ConcurrentHashMap<>();
 
-    public ChordNode(String name, SimulatedNetwork network, int subnetId) {
+    public ChordNode(String name, NetworkEnvironment network, int subnetId) {
         this.name = name;
         this.network = network;
         this.subnetId = subnetId;
@@ -140,7 +140,7 @@ public class ChordNode {
 
     /**
      * Finds the node responsible for the given key. Each forwarding between
-     * nodes counts as one hop and accumulates the (simulated) link latency,
+     * nodes counts as one hop and accumulates the configured link latency,
      * which feeds the evaluation metrics.
      */
     public ChordNode findSuccessor(ChordId key, Hops hops) {

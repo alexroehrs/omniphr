@@ -10,7 +10,7 @@ import br.unisinos.omniphr.middleware.datablock.NodesManager;
 import br.unisinos.omniphr.middleware.datablock.RawRecord;
 import br.unisinos.omniphr.middleware.security.Encryptor;
 import br.unisinos.omniphr.middleware.security.RolesAndPrivileges;
-import br.unisinos.omniphr.net.SimulatedNetwork;
+import br.unisinos.omniphr.net.NetworkEnvironment;
 import br.unisinos.omniphr.node.Actor;
 import br.unisinos.omniphr.node.RegularNode;
 import br.unisinos.omniphr.overlay.RoutingOverlay;
@@ -64,7 +64,7 @@ public class DemoScenario {
         // ------------------------------------------------------------------
         // Network bootstrap: 12 nodes in 4 subnetworks
         // ------------------------------------------------------------------
-        SimulatedNetwork network = new SimulatedNetwork(42);
+        NetworkEnvironment network = new NetworkEnvironment(42);
         network.setSubnetsPerBackboneDomain(4); // single backbone router domain
 
         RoutingOverlay ro1 = new RoutingOverlay("overlay-hospital", network, 0);

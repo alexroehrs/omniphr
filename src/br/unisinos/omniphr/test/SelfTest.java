@@ -10,7 +10,7 @@ import br.unisinos.omniphr.middleware.datablock.NodesManager;
 import br.unisinos.omniphr.middleware.datablock.RawRecord;
 import br.unisinos.omniphr.middleware.security.Authenticator;
 import br.unisinos.omniphr.middleware.security.Encryptor;
-import br.unisinos.omniphr.net.SimulatedNetwork;
+import br.unisinos.omniphr.net.NetworkEnvironment;
 import br.unisinos.omniphr.node.Actor;
 import br.unisinos.omniphr.node.RegularNode;
 import br.unisinos.omniphr.overlay.RoutingOverlay;
@@ -52,7 +52,7 @@ public class SelfTest {
         // ------------------------------------------------------------
         // Chord lookup correctness against brute force
         // ------------------------------------------------------------
-        SimulatedNetwork net = new SimulatedNetwork(7);
+        NetworkEnvironment net = new NetworkEnvironment(7);
         List<ChordNode> ring = new ArrayList<>();
         for (int i = 0; i < 64; i++) {
             ChordNode n = new ChordNode("test-node-" + i, net, i % 4);
@@ -82,7 +82,7 @@ public class SelfTest {
         // ------------------------------------------------------------
         // Full pipeline over a small overlay network
         // ------------------------------------------------------------
-        SimulatedNetwork net2 = new SimulatedNetwork(21);
+        NetworkEnvironment net2 = new NetworkEnvironment(21);
         RoutingOverlay overlay = new RoutingOverlay("t-overlay", net2, 0);
         RegularNode provider = new RegularNode("t-hospital", net2, 0,
                 RegularNode.Kind.HOSPITAL_EHR, StandardFormat.OPENEHR);

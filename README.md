@@ -37,8 +37,8 @@ up-to-date and interoperable view of the PHR.
 
 **Java 8** (source and bytecode compatible with the Java version current at the time
 the model was designed), **no external dependencies** (cryptography via the JDK's
-JCA). Runs unchanged on any later JDK. Simulated single-process P2P network with N
-nodes.
+JCA). Runs unchanged on any later JDK. The whole multi-node P2P network runs
+self-contained within a single process.
 
 Note: AES-256 requires the JCE Unlimited Strength policy on Java 8 builds older than
 8u161; from 8u161 onward it is enabled by default.
@@ -78,7 +78,7 @@ Or manually: `javac -d bin $(find src -name "*.java")` and
 | **Roles and Privileges** | Personal approach (patient grants/revokes at any time; master controller) and organizational approach (profiles per organization); effective privilege = intersection | `middleware/security/RolesAndPrivileges.java` |
 | Repositories | Relational (users, chain index, archetype registry) and semantic (ontology triples) | `repository/RelationalRepository.java`, `SemanticRepository.java` |
 | Sources / leaf nodes | EMR/EHR systems, patient devices, sensors/IoT, acting as providers or consumers | `node/RegularNode.java`, `node/Actor.java` |
-| Network environment | Subnetworks served by routing overlays and interconnected by backbone routers, with simulated link latencies | `net/SimulatedNetwork.java` |
+| Network environment | Subnetworks served by routing overlays and interconnected by backbone routers, with configurable link latencies | `net/NetworkEnvironment.java` |
 | Evaluation harness | 10 setups (100–3200 nodes), tests A/B, churn up to 5%, random messages at up to 1 s intervals; collects MP, OHC and OL | `eval/Evaluation.java`, `net/Metrics.java` |
 
 The demo (`demo/DemoScenario.java`) runs a typical scenario on a 12-node network with
@@ -95,19 +95,21 @@ regulations such as LGPD and GDPR. The remaining clinical values (e.g. blood
 pressure, hemoglobin) are generic physiological examples not linked to any
 identifiable person.
 
-## Evaluation results
+## Evaluation harness
 
-Metrics collected per test: Messages Present (MP, average number of messages in
-transmission at every instant), One-way Hop Count (OHC) and One-way Latency (OL).
-With `eval --full --duration 60` (absolute values depend on the simulated latency
-parameters; the scalability pattern is what matters):
+The `eval` mode exercises the network at growing scales (setups from 100 to 3200
+nodes, with churn and randomly triggered messages) and reports three metrics per
+test: Messages Present (MP, average number of messages in transmission at every
+instant), One-way Hop Count (OHC) and One-way Latency (OL).
 
-- **OHC** grows logarithmically with the number of nodes: 4.28 → 6.77 hops from 100
-  to 3200 nodes — O(log N) lookup confirmed;
-- **MP** grows proportionally to the number of nodes;
-- **OL** remains stable even with 32x more nodes (0.22 s → 0.52 s): the topology,
-  employing the Chord algorithm, answers an increasing number of users and requests
-  without increasing the delivery time significantly.
+**Disclaimer:** the harness runs the whole network self-contained within a single
+process, with configurable link latencies. The numbers it prints are illustrative
+only — they depend on those parameters and on the execution environment, and must
+not be taken as scientific results nor as a reproduction of any published
+evaluation. Its purpose is to let you observe the qualitative scalability behavior
+of the Chord-based topology (hop count growing slowly with the number of nodes,
+latency remaining stable) and to serve as a starting point for your own
+experiments. See `sample-output.txt` for an example.
 
 ## Implementation decisions
 
@@ -123,6 +125,7 @@ parameters; the scalability pattern is what matters):
   distributed across the whole ring.
 - **NLP and ontology** in the Translator are minimal implementations with clear
   extension points.
-- **In-process network simulator** with per-hop latencies (intra-subnetwork,
-  inter-subnetwork and backbone), instead of an external network simulation
-  framework.
+- **Self-contained network environment**: the nodes and their communication run
+  within a single process, with configurable per-hop latencies (intra-subnetwork,
+  inter-subnetwork and backbone), keeping the project easy to build, run and
+  extend with no external infrastructure.
